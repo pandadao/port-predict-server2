@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import socket
-import threading 
+import threading
 import os
 import sys, struct
 
-
+#IP value to binary
 def addr2bytes(addr):
     host, port = addr
     try:
@@ -25,6 +25,7 @@ def main():
     HOST = "127.0.0.1"
     PORT = 30344
 
+    #socket service Listen
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((HOST, PORT))
     s.listen(1)
