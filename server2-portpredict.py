@@ -22,7 +22,7 @@ def addr2bytes(addr):
 
 
 def main():
-    HOST = "127.0.0.1"
+    HOST = "0.0.0.0"
     PORT = 30344
 
     #socket service Listen
