@@ -32,3 +32,5 @@ while True:
     start_new_thread(threadWork, (csock,))
 
 sock.close()
+
+def fkvbgd

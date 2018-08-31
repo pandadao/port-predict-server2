@@ -5,6 +5,10 @@ import threading
 import os
 import sys, struct
 
+#global variable
+#variable for client unique number, identifying the device information
+V_DeviceIdentify = 0
+
 #IP value to binary
 def addr2bytes(addr):
     host, port = addr
@@ -28,7 +32,7 @@ def main():
     #socket service Listen
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((HOST, PORT))
-    s.listen(1)
+    s.listen(5)
 
     while True:
         (csock, adr) = s.accept()
