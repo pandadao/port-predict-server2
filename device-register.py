@@ -33,6 +33,10 @@ def Random_Password(string_length = 10):    #The string_length can change like p
     Device_password = random[0:string_length]
     return  Device_password
 
+
+'''
+This part has to redesign, because the repeat probability is too high!!!!
+'''
 # Generate the device ID, it depends the connection client mac address value.
 def Random_ID(Device_MAC, string_length = 10):
     random = str(Device_MAC)

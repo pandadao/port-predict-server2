@@ -33,4 +33,9 @@ while True:
 
 sock.close()
 
-def fkvbgd
+#read file
+'''
+f = open("aaa.txt", 'r')
+ID, password = f.readline().split(" ")
+f.close()
+'''
