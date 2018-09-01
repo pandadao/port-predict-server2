@@ -7,8 +7,25 @@ And return the device ID and password to the device.
 '''
 
 import socket
+import random
+import thread 
 
 
+'''
+generate a random password for device, the format is english and number mixed.
+
+def Random_value(string_length = 10):
+    random = str(uuid.uuid4())
+    random = random.replace("-", "")
+    return random[0:string_length]
+
+print(Random_value(6))
+'''
+
+def Random_value(string_length = 10):
+    random = str(uuid.uuid4())
+    random = random.replace("-", "")
+    return random[0:string_length]
 
 
 
