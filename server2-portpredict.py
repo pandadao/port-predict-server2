@@ -37,8 +37,8 @@ def main():
     while True:
         (csock, adr) = s.accept()
         #print "Client Info: ", csock, adr
-        port1_get_from_server1, public_IP_get_from_server1 = csock.recv(1024).split(" ")
-        print "main: " + port1_get_from_server1 + " " + public_IP_get_from_server1
+        port1_get_from_server1, public_IP_get_from_server1, Client_Mac_Value = csock.recv(1024).split(" ")
+        print "main: " + port1_get_from_server1 + " " + public_IP_get_from_server1 + " " + Client_Mac_Value
         dhost, dport = addr2bytes(adr)
         if not dhost:
             pass
