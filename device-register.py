@@ -9,6 +9,7 @@ And return the device ID and password to the device.
 import socket
 import random
 import thread
+import uuid
 
 
 def addr2bytes(addr):
