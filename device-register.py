@@ -52,7 +52,7 @@ def main():
 
         Device_MAC = csock.recv(1024)
         print ("Device_MAC: " + Device_MAC)
-        dhost, dport = addr2addr2bytes(adr)
+        dhost, dport = addr2bytes(adr)
 
         if not dhost:
             pass
