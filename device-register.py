@@ -43,6 +43,18 @@ def Random_ID(Device_MAC, string_length = 10):
     Device_ID = random[0:string_length]  #datatype is str
     return Device_ID
 
+def Information_Process(Device_MAC):
+    # Check the device has registered or not.
+    
+
+
+    #Device_ID = Random_ID(Device_MAC, 6)
+    Device_ID = Device_MAC
+    Device_password = Random_Password(6)
+    send_msg_to_client = Device_ID + " " + Device_password
+    return send_msg_to_client
+
+
 
 def main():
     HOST = "0.0.0.0"
@@ -62,9 +74,7 @@ def main():
         if not dhost:
             pass
         else:
-            Device_ID = Random_ID(Device_MAC, 6)
-            Device_password = Random_Password(6)
-            send_msg_to_client = Device_ID + " " + Device_password
+            send_msg_to_client = Information_Process(Device_MAC)
             csock.send(send_msg_to_client)
         csock.close()
 
