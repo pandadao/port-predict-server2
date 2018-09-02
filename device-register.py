@@ -10,6 +10,7 @@ import socket
 import random
 import thread
 import uuid
+import MySQLdb
 
 
 def addr2bytes(addr):
@@ -43,9 +44,23 @@ def Random_ID(Device_MAC, string_length = 10):
     Device_ID = random[0:string_length]  #datatype is str
     return Device_ID
 
+def Stored_to_DB(Device_MAC):
+    db = MySQLdb.connect("localhost", "newuser", "newpassword", "IPPort_Information")
+    cursor = db.cursor()
+    # the command about search one data is:     SELECT * FROM `Device_relative` WHERE `mac_address` = '123'
+    sql = "SELECT `mac_address` FROM `Device_relative` WHERE `mac_address` = " + Device_MAC
+    cursor.execute(sql)
+    result = cursor.fetchone()
+    # if no match data in db, save it.
+    if result == None:
+        command = "INSERT INTO `Device_relative` (`mac_address`, `DeviceID`, `password`, `Register_Time`, `Public_IP`) VALUE ()"
+
+
+
+
 def Information_Process(Device_MAC):
     # Check the device has registered or not.
-    
+    Stored_to_DB(Device_MAC)
 
 
     #Device_ID = Random_ID(Device_MAC, 6)
